@@ -1,7 +1,7 @@
 import React from "react";
 import './style.css'
 import emailjs from "@emailjs/browser";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 
 
@@ -41,7 +41,7 @@ function Contact() {
   return (
     <div className="mb-48">
       <header className=" mb-10 font-[900] mt-10 lg:mt-0 lg:text-7xl md:text-7xl text-5xl text-center lg:text-left">
-        <div className=" uppercase">let's work</div>
+        <div className=" uppercase">{"let's work"}</div>
         <div className="text-[#353334] uppercase">TOGETHER</div>
       </header>
       <form className="flex flex-col gap-4">

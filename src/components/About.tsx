@@ -4,15 +4,30 @@ import { Layers, LayoutGrid, ArrowRight } from "lucide-react";
 import cornershapimage from "@/assets/bgimageshapcorner.svg";
 import curvedlines from "@/assets/curvedlines.svg";
 
-const Card = ({
+interface IconProps {
+  className?: string; // Most icons accept className
+  style?: React.CSSProperties; // Icons might accept style
+  // Add any other common props your icons use
+}
+
+interface CardProps {
+  icon: React.ComponentType<IconProps>; // Or React.FC<any> if it's a functional component
+  title: string;
+  background: string;
+  textColor: string;
+  width: "1/3" | "2/3" | "full"; // Assuming these are the only possible values
+  bgimage: string;
+  colorbg?: string; // Optional color background
+}
+
+const Card: React.FC<CardProps> = ({
   icon: Icon,
   title,
   background,
   textColor,
   width,
   bgimage,
-  colorbg,
-}: any) => {
+}: CardProps) => {
   return (
     <div
       className={` relative rounded-2xl p-6 flex flex-col h-72  w-full lg:w-${width} overflow-hidden ${background}`}

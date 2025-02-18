@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import saasLogo from "@/assets/saas.png";
 import teacherLogo from "@/assets/teacher.png";
 import tickTack from "@/assets/tick-tak.png";
@@ -7,7 +7,15 @@ import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 
 
-const projectsData = [
+interface Project {
+  title: string;
+  description: string;
+  image: string; // Or StaticImageData if directly imported images
+  skills: string[];
+  hyperlink: string;
+}
+
+const projectsData: Project[] = [
   {
     title: "SaaS Dashboard Landing Page",
     description:
@@ -58,7 +66,11 @@ function Projects() {
   );
 }
 
-const ProjectCard = ({ item }: any) => {
+interface ProjectCardProps {
+  item: Project;
+}
+
+const ProjectCard = ({ item }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

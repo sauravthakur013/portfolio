@@ -2,12 +2,8 @@ import React from "react";
 import {
   LucideLinkedin,
   GithubIcon,
-  TwitterIcon,
   Mail,
   InstagramIcon,
-  FacebookIcon,
-  CodepenIcon,
-  DribbbleIcon,
 } from "lucide-react";
 import image01 from "@/assets/imagePic01.svg";
 import image02 from "@/assets/imagepic02.svg";

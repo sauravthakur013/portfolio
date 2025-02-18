@@ -7,12 +7,11 @@ import { useEffect, useState, useRef } from "react";
 import Experience from "@/components/Experience";
 import ToolSkills from "@/components/ToolSkills";
 import Contact from "@/components/Contact";
-import toast, { Toaster } from "react-hot-toast";
-import {ArrowBigUpDashIcon, FileArchiveIcon, } from "lucide-react";
+import { Toaster } from "react-hot-toast";
 
 // Configuration for scrolling behavior
 const SCROLL_DURATION = 1500; // milliseconds - adjust for desired speed
-const SCROLL_EASING = "easeOutCubic"; // Choose from easing functions below
+// const SCROLL_EASING = "easeOutCubic"; // Choose from easing functions below
 
 // Easing functions (copied for simplicity - consider a utility file)
 function easeOutCubic(x: number): number {

@@ -16,8 +16,14 @@ import typescriptlogo from "@/assets/typescript.svg";
 import gitlogo from "@/assets/gitlogo.svg";
 import redislogo from "@/assets/redislogo.svg";
 
+interface Skill {
+  title: string;
+  oneLiner: string;
+  url: string; // Or StaticImageData if you are importing them as modules
+}
+
 function ToolSkills() {
-  const list = [
+  const list: Skill[] = [
     {
       title: "React.js",
       oneLiner: "Front-End Development",
@@ -163,14 +169,14 @@ function ToolSkills() {
         <div className="text-[#353334] uppercase">Expertise</div>
       </header>
       <div className="flex flex-wrap  justify-center lg:justify-start gap-3">
-        {list.map((item: any, index: any) => {
+        {list.map((item, index) => {
           return (
             <div
               key={index}
               className="hover:bg-[#F5EFFF] dark:hover:bg-[#1C1A19]  flex  w-[350px] p-4 duration-300 gap-4 rounded-md"
             >
               <div className="h-20 min-w-20  rounded-md ">
-                <img src={item.url} className="h-full w-full object-cover " />
+                <img src={item.url} className="h-full w-full object-cover " alt={item.title} />
               </div>
               <div>
                 <header className="font-[600] text-[22px]">{item.title}</header>

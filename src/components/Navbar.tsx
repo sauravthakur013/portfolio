@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Home,
   Folder,
@@ -13,9 +13,14 @@ import { useTheme } from "next-themes";
 import { motion } from "framer-motion"; // Import framer-motion
 import Link from "next/link";
 
-function Navbar({setSelectedNavitem}:any) {
+interface NavbarProps {
+  setSelectedNavitem: (item: string) => void;
+}
+
+function Navbar({ setSelectedNavitem }: NavbarProps) {
   const { theme, setTheme } = useTheme();
   const [hoverItem, setHoverItem] = useState<string | null>(null);
+
   const tooltipVariants = {
     initial: {
       opacity: 0,
@@ -48,7 +53,9 @@ function Navbar({setSelectedNavitem}:any) {
         className="relative cursor-pointer text-[black] dark:text-white"
         onMouseEnter={() => setHoverItem("Home")}
         onMouseLeave={() => setHoverItem(null)}
-        onClick={()=>{setSelectedNavitem('about')}}
+        onClick={() => {
+          setSelectedNavitem("about");
+        }}
       >
         <Home size={20} />
         {hoverItem === "Home" && (
@@ -69,8 +76,9 @@ function Navbar({setSelectedNavitem}:any) {
         className="cursor-pointer text-[black] dark:text-white relative "
         onMouseEnter={() => setHoverItem("Projects")}
         onMouseLeave={() => setHoverItem(null)}
-        onClick={()=>{setSelectedNavitem('projects')}}
-
+        onClick={() => {
+          setSelectedNavitem("projects");
+        }}
       >
         <Folder size={20} />
         {hoverItem === "Projects" && (
@@ -91,7 +99,9 @@ function Navbar({setSelectedNavitem}:any) {
         className="cursor-pointer text-[black] dark:text-white relative"
         onMouseEnter={() => setHoverItem("Experience")}
         onMouseLeave={() => setHoverItem(null)}
-        onClick={()=>{setSelectedNavitem('experience')}}
+        onClick={() => {
+          setSelectedNavitem("experience");
+        }}
       >
         <Briefcase size={20} />
         {hoverItem === "Experience" && (
@@ -112,7 +122,9 @@ function Navbar({setSelectedNavitem}:any) {
         className="cursor-pointer text-[black] dark:text-white relative"
         onMouseEnter={() => setHoverItem("Contact")}
         onMouseLeave={() => setHoverItem(null)}
-        onClick={()=>{setSelectedNavitem('contact')}}
+        onClick={() => {
+          setSelectedNavitem("contact");
+        }}
       >
         <Contact size={20} />
         {hoverItem === "Contact" && (

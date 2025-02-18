@@ -4,7 +4,16 @@ import bookysureLogo from "@/assets/bookysure_logo.png";
 import byjus from "@/assets/b.png";
 import instavans from "@/assets/instavans.png";
 
-const projectsData = [
+interface Project {
+  title: string;
+  description: string;
+  image: string; // Or use StaticImageData if these are statically imported images
+  date: string;
+  type: string;
+  skills: string[];
+}
+
+const projectsData: Project[] = [
   {
     title: "Instavans",
     description:
@@ -70,7 +79,11 @@ function Projects() {
   );
 }
 
-function ProjectCard({ project }:any) {
+interface ProjectCardProps {
+  project: Project;
+}
+
+function ProjectCard({ project }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [skillVisibilities, setSkillVisibilities] = useState(
     Array(project.skills.length).fill(false)
@@ -80,7 +93,7 @@ function ProjectCard({ project }:any) {
     if (isHovered) {
       // Fade in skills
       const timer = setTimeout(() => {
-        project.skills.forEach((skill:any, i:any) => {
+        project.skills.forEach((skill, i) => {
           setTimeout(() => {
             setSkillVisibilities((prev) => {
               const next = [...prev];
@@ -130,7 +143,7 @@ function ProjectCard({ project }:any) {
         </div>
         <div className="hidden lg:block w-[40%]">
           <div className="flex flex-wrap gap-x-2 gap-y-1.5 pt-4">
-            {project.skills.map((skill:any, index:any) => (
+            {project.skills.map((skill, index) => (
               <div
                 key={index}
                 className={`bg-[#EFF3EA] h-fit text-nowrap px-2 py-1 rounded-md dark:bg-[#1C1A19] dark:text-[#988E8F] transition-opacity duration-300 ${
