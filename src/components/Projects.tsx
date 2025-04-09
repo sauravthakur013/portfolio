@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import saasLogo from "@/assets/saas.png";
-import teacherLogo from "@/assets/teacher.png";
+// import teacherLogo from "@/assets/teacher.png";
 import tickTack from "@/assets/tick-tak.png";
 import prodManeger from "@/assets/prod.png";
 import prodFire from "@/assets/prod-firebase.png";
