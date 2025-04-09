@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import saasLogo from "@/assets/saas.png";
 import teacherLogo from "@/assets/teacher.png";
 import tickTack from "@/assets/tick-tak.png";
+import prodManeger from "@/assets/prod.png";
+import prodFire from "@/assets/prod-firebase.png";
+import backend from "@/assets/backend.png";
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
-
 
 interface Project {
   title: string;
@@ -17,36 +19,88 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: "SaaS Dashboard Landing Page",
-    description:
-      "Developed a modern SaaS dashboard with a clean, user-friendly landing page. The dashboard includes features like chats, customer testimonials, and a contact section for seamless interaction with the company. Designed for optimal performance and user engagement, the project highlights strong front-end skills and attention to detail.",
-    image: saasLogo.src,
-    skills: ["React", "Typescript", "Node.js", "Tailwind CSS", "Charts JS"],
-    hyperlink:'https://dashboard-saas.vercel.app/'
-  },
-  {
-    title: "Revolutionize Learning",
-    description:
-      "This platform allows teachers to host live classes with drawing tools, recording sessions for later access by students. It fosters real-time interaction, secure accounts, and easy access to past lessons, offering a flexible learning experience.",
-    image: teacherLogo.src,
-    skills: [
-      "React",
-      "JavaScript",
-      "Animation",
-      "Axios",
-      "RestAPIs",
-      "Node JS",
-    ],
-    hyperlink:''
-  },
-  {
     title: "Tic Tak Toe (Muiltiplayer) ",
     description:
       "Built a real-time multiplayer Tic-Tac-Toe game using Next.js, Node.js, MongoDB, Express, and WebSockets. It features seamless live gameplay, user authentication, and database integration to track matches, showcasing expertise in full-stack development and real-time communication.",
     image: tickTack.src,
     skills: ["Next Js", "Web Sockets", "RestAPIs", "TypeScript", "Node JS"],
-    hyperlink:'https://tic-tac-frontend-cuo5.vercel.app/'
+    hyperlink: "https://tic-tac-frontend-cuo5.vercel.app/",
   },
+  {
+    title: "SaaS Dashboard Landing Page",
+    description:
+      "Developed a modern SaaS dashboard with a clean, user-friendly landing page. The dashboard includes features like chats, customer testimonials, and a contact section for seamless interaction with the company. Designed for optimal performance and user engagement, the project highlights strong front-end skills and attention to detail.",
+    image: saasLogo.src,
+    skills: ["React", "Typescript", "Node.js", "Tailwind CSS", "Charts JS"],
+    hyperlink: "https://dashboard-saas.vercel.app/",
+  },
+  {
+    title: "Production Management System",
+    description:
+      "Transform your manufacturing operations with our comprehensive management solution. Get started today and experience the future of production management.",
+    image: prodManeger.src,
+    skills: [
+      "Next Js",
+      "Tailwind CSS",
+      "Typescript",
+      "RestAPIs",
+      "React Query",
+    ],
+    hyperlink: "https://production-manegement.vercel.app/welcome",
+  },
+  {
+    title: "Production Management System with Firebase",
+    description:
+      "Efficiently manage your production workflow with our comprehensive management solution. Track, analyze, and optimize your operations in real-time.",
+    image: prodFire.src,
+    skills: ["Next Js", "Tailwind CSS", "Typescript", "Firebase"],
+    hyperlink: "https://firebase-pro-jdo1.vercel.app/welcome",
+  },
+
+  {
+    title: "Advance Auth System",
+    description:
+      "Auth Server Web is a robust Node.js-based authentication and authorization server that handles secure user management. It supports features like user registration, login, role-based access control, and session handling using refresh tokens.",
+    image: backend.src,
+     skills : [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "OAuth",
+      "RBAC",
+      "Mongoose",
+      "Bcrypt",
+      "Nodemailer",
+      "OTP",
+      "RateLimiter",
+      "REST",
+      "API",
+      "Middleware",
+      "ErrorHandling",
+      "Validation",
+      "Session",
+      "Security",
+      "Authentication",
+      "Authorization"
+    ],
+    hyperlink: "https://github.com/sauravthakur013/auth-backend-adv",
+  },
+  // {
+  //   title: "Revolutionize Learning",
+  //   description:
+  //     "This platform allows teachers to host live classes with drawing tools, recording sessions for later access by students. It fosters real-time interaction, secure accounts, and easy access to past lessons, offering a flexible learning experience.",
+  //   image: teacherLogo.src,
+  //   skills: [
+  //     "React",
+  //     "JavaScript",
+  //     "Animation",
+  //     "Axios",
+  //     "RestAPIs",
+  //     "Node JS",
+  //   ],
+  //   hyperlink:''
+  // },
 ];
 
 function Projects() {
@@ -94,7 +148,12 @@ const ProjectCard = ({ item }: ProjectCardProps) => {
           <header className="font-[600] text-[18px] ">{item.title}</header>
           <p className="text-sm">{item.description}</p>
           {/*  External Link Icon  */}
-          <Link href={item.hyperlink} target="_blank" rel="noopener noreferrer" className="flex items-center mt-2 hover:text-gray-300">
+          <Link
+            href={item.hyperlink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center mt-2 hover:text-gray-300"
+          >
             Learn More <ExternalLinkIcon size={14} className="ml-1" />
           </Link>
         </div>
@@ -106,7 +165,9 @@ const ProjectCard = ({ item }: ProjectCardProps) => {
           {item.description}
         </p>
         <div className=" hover:text-black dark:hover:text-white duration-300 text-[#988E8F] cursor-pointer ">
-          <Link href={item.hyperlink} target="_blank" rel="noopener noreferrer">Learn More <ExternalLinkIcon size={16} className=" inline mb-1" /></Link>
+          <Link href={item.hyperlink} target="_blank" rel="noopener noreferrer">
+            Learn More <ExternalLinkIcon size={16} className=" inline mb-1" />
+          </Link>
         </div>
       </div>
     </div>

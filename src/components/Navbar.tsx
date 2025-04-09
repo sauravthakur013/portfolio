@@ -143,7 +143,7 @@ function Navbar({ setSelectedNavitem }: NavbarProps) {
       </div>
 
       <Link
-        href={`https://drive.google.com/file/d/1HFc3JhucXnybvIgv-4fvgGZeAfG0DKcT/view?usp=sharing`}
+        href={`https://drive.google.com/file/d/1mpx3m_twmryU4_BT5Z6-setqvhspDi1K/view?usp=sharing`}
         target="_blank"
       >
         <div
